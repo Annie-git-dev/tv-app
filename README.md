@@ -20,4 +20,5 @@ Clone the repository:
 ````bash
 git clone https://github.com/Annie-git-dev/tv-app.git
 cd tv-app
+npm install
 npm run dev
