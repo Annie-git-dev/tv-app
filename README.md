@@ -18,6 +18,6 @@ A responsive, interactive TV web app built with **React**, **Tailwind CSS** and 
 Clone the repository:
 
 ````bash
-git clone https://github.com/Annie-git-dev/tv-app
+git clone https://github.com/Annie-git-dev/tv-app.git
 cd tv-app
 npm run dev
