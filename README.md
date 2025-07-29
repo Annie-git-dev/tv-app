@@ -1,6 +1,6 @@
 # 📺 TV Web Application
 
-A responsive, interactive TV web app built with **React**, **Tailwind CSS**, **Zustand** and **Tanstack(React) Query** featuring a custom video player, trending carousel, featured movie display, and smooth session-based interactivity.
+A responsive, interactive TV web app built with **React**, **Tailwind CSS**, **Zustand** and **Tanstack(React) Query** featuring a custom video player, trending carousel, featured movie display, and smooth local-based interactivity.
 
 ## 🚀 Features
 
@@ -9,7 +9,7 @@ A responsive, interactive TV web app built with **React**, **Tailwind CSS**, **Z
 - ▶️ Custom Play & More Info Modals
 - 🧠 State Management with Zustand
 - 🌐 Data Fetching with React Query
-- 💾 sessionStorage-based "Last Watched" tracking
+- 💾 localStorage-based "Last Watched" tracking
 - 📱 Mobile-first Responsive UI
 - 🎨 Tailwind CSS for styling
 
