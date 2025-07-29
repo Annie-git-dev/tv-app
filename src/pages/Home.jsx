@@ -14,7 +14,7 @@ export default function Home() {
 
         setTrending(data?.TrendingNow.slice(0, 50));
 
-        const saved = sessionStorage.getItem("featured");
+        const saved = localStorage.getItem("featured");
         if (saved) {
             try {
                 const video = JSON.parse(saved);
@@ -39,7 +39,7 @@ export default function Home() {
             }, 2000);
         } else {
             setFeaturedVideo(video);
-            sessionStorage.setItem("featured", JSON.stringify(video));
+            localStorage.setItem("featured", JSON.stringify(video));
         }
 
         setTrending((prev) => {
