@@ -52,7 +52,7 @@ export default function Featured() {
                     {data.Category.toUpperCase()}
                 </div>
 
-                <div className="font-serif text-6xl font-bold">{data.Title.toUpperCase()}</div>
+                <div className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">{data.Title.toUpperCase()}</div>
 
                 <p className="text-sm md:text-lg text-white">
                     {data.ReleaseYear} {data.MpaRating} {formatSecondsToHrsMins(data.Duration)}

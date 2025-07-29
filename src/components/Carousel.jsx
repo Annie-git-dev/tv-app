@@ -16,7 +16,7 @@ export default function Carousel({ data, onSelect }) {
                 scrollbar={{ draggable: true }}
                 className="pr-6"
             >
-                {data.map((video) => (
+                {data?.map((video) => (
                     <SwiperSlide
                         key={video.Id}
                         className="!w-[clamp(120px,20vw,200px)]"

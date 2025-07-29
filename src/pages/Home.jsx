@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import Carousel from "../components/Carousel";
 import Featured from "../components/Featured";
-import data from "../data/data.json";
 import { useVideoStore } from "../store/useVideoStore";
+import useGetData from "../hooks/useGetData";
 
 export default function Home() {
+    const { data, isLoading, error } = useGetData();
     const { featuredVideo, setFeaturedVideo, enablePlayVideo } = useVideoStore();
     const [trending, setTrending] = useState([]);
 
     useEffect(() => {
-        setTrending(data.TrendingNow.slice(0, 50));
+        if (!data) return;
+
+        setTrending(data?.TrendingNow.slice(0, 50));
 
         const saved = sessionStorage.getItem("featured");
         if (saved) {
@@ -21,12 +24,12 @@ export default function Home() {
                     return [video, ...filtered];
                 });
             } catch {
-                setFeaturedVideo(data.Featured);
+                setFeaturedVideo(data?.Featured);
             }
         } else {
-            setFeaturedVideo(data.Featured);
+            setFeaturedVideo(data?.Featured);
         }
-    }, [setFeaturedVideo]);
+    }, [data, setFeaturedVideo]);
 
     const handleSelectVideo = (video) => {
         if (video.Id === featuredVideo?.Id) {
@@ -44,6 +47,9 @@ export default function Home() {
             return [video, ...filtered];
         });
     };
+
+    if (isLoading) return <p>Loading...</p>;
+    if (error) return <p>Error loading data</p>;
 
     return (
         <main className="relative w-full h-[100vh] overflow-hidden">
